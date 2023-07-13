@@ -25,7 +25,7 @@ class _LotteryAppState extends State<LotteryApp> {
           title: Text('Lottery App',
               style: TextStyle(color: Colors.brown.shade50),
               textAlign: TextAlign.center),
-          backgroundColor: Color.fromRGBO(162, 1, 22,1),
+          backgroundColor:const Color.fromRGBO(162, 1, 22,1),
         ),
         body: SafeArea(
           child: Center(
@@ -39,7 +39,7 @@ class _LotteryAppState extends State<LotteryApp> {
                     style: TextStyle(fontSize: 20),
                   ),
                 ),
-                SizedBox(
+              const  SizedBox(
                   height: 20,
                 ),
                 Container(
@@ -54,17 +54,17 @@ class _LotteryAppState extends State<LotteryApp> {
                           ? Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Icon(
+                              const  Icon(
                                   Icons.emoji_emotions_outlined,
                                   color: Colors.green,
                                   size: 50,
                                 ),
-                                SizedBox(
+                               const SizedBox(
                                   height: 20,
                                 ),
                                 Text(
                                   "Congratulations You Win \nYour number is $x",
-                                  style: TextStyle(
+                                  style:const TextStyle(
                                     fontSize: 20,
                                   ),
                                   textAlign: TextAlign.center,
@@ -79,12 +79,12 @@ class _LotteryAppState extends State<LotteryApp> {
                                   color: Colors.red.shade700,
                                   size: 50,
                                 ),
-                                SizedBox(
+                               const SizedBox(
                                   height: 20,
                                 ),
                                 Text(
                                   "Try Again \nYour number is $x",
-                                  style: TextStyle(
+                                  style:const TextStyle(
                                     fontSize: 20,
                                   ),
                                   textAlign: TextAlign.center,
@@ -97,337 +97,32 @@ class _LotteryAppState extends State<LotteryApp> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                GestureDetector(
-                                  child: Container(
-                                    height: 80,
-                                    width: 80,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.black12,
-                                            offset: Offset(5.0, 5.0),
-                                            blurRadius: 5.0,
-                                            spreadRadius: 0.5,
-                                          ),
-                                          BoxShadow(
-                                            color: Colors.black12,
-                                            offset: Offset(-5.0, -5.0),
-                                            blurRadius: 5.0,
-                                            spreadRadius: 0.5,
-                                          )
-                                        ]),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: Image(
-                                        image: AssetImage(
-                                            'assets/images/star.jpg'),
-                                      ),
-                                    ),
-                                  ),
-                                  onTap: () {
-                                    _isshow = !_isshow;
-                                    setState(() {
-                                      x = random.nextInt(10);
-                                    });
-                                  },
-                                ),
-                                GestureDetector(
-                                  child: Container(
-                                    height: 80,
-                                    width: 80,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.black12,
-                                            offset: Offset(5.0, 5.0),
-                                            blurRadius: 5.0,
-                                            spreadRadius: 0.5,
-                                          ),
-                                          BoxShadow(
-                                            color: Colors.black12,
-                                            offset: Offset(-5.0, -5.0),
-                                            blurRadius: 5.0,
-                                            spreadRadius: 0.5,
-                                          )
-                                        ]),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: Image(
-                                        image: AssetImage(
-                                            'assets/images/star.jpg'),
-                                      ),
-                                    ),
-                                  ),
-                                  onTap: () {
-                                    _isshow = !_isshow;
-                                    setState(() {
-                                      x = random.nextInt(10);
-                                    });
-                                  },
-                                ),
-                                GestureDetector(
-                                  child: Container(
-                                    height: 80,
-                                    width: 80,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.black12,
-                                            offset: Offset(5.0, 5.0),
-                                            blurRadius: 5.0,
-                                            spreadRadius: 0.5,
-                                          ),
-                                          BoxShadow(
-                                            color: Colors.black12,
-                                            offset: Offset(-5.0, -5.0),
-                                            blurRadius: 5.0,
-                                            spreadRadius: 0.5,
-                                          )
-                                        ]),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: Image(
-                                        image: AssetImage(
-                                            'assets/images/star.jpg'),
-                                      ),
-                                    ),
-                                  ),
-                                  onTap: () {
-                                    _isshow = !_isshow;
-                                    setState(() {
-                                      x = random.nextInt(10);
-                                    });
-                                  },
-                                ),
+                                buildClickableImage(),
+                                buildClickableImage(),
+                                buildClickableImage(),
+
                               ],
                             ),
-                            SizedBox(
+                           const SizedBox(
                               height: 20,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                GestureDetector(
-                                  child: Container(
-                                    height: 80,
-                                    width: 80,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.black12,
-                                            offset: Offset(5.0, 5.0),
-                                            blurRadius: 5.0,
-                                            spreadRadius: 0.5,
-                                          ),
-                                          BoxShadow(
-                                            color: Colors.black12,
-                                            offset: Offset(-5.0, -5.0),
-                                            blurRadius: 5.0,
-                                            spreadRadius: 0.5,
-                                          )
-                                        ]),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: Image(
-                                        image: AssetImage(
-                                            'assets/images/star.jpg'),
-                                      ),
-                                    ),
-                                  ),
-                                  onTap: () {
-                                    _isshow = !_isshow;
-                                    setState(() {
-                                      x = random.nextInt(10);
-                                    });
-                                  },
-                                ),
-                                GestureDetector(
-                                  child: Container(
-                                    height: 80,
-                                    width: 80,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.black12,
-                                            offset: Offset(5.0, 5.0),
-                                            blurRadius: 5.0,
-                                            spreadRadius: 0.5,
-                                          ),
-                                          BoxShadow(
-                                            color: Colors.black12,
-                                            offset: Offset(-5.0, -5.0),
-                                            blurRadius: 5.0,
-                                            spreadRadius: 0.5,
-                                          )
-                                        ]),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: Image(
-                                        image: AssetImage(
-                                            'assets/images/star.jpg'),
-                                      ),
-                                    ),
-                                  ),
-                                  onTap: () {
-                                    _isshow = !_isshow;
-                                    setState(() {
-                                      x = random.nextInt(10);
-                                    });
-                                  },
-                                ),
-                                GestureDetector(
-                                  child: Container(
-                                    height: 80,
-                                    width: 80,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.black12,
-                                            offset: Offset(5.0, 5.0),
-                                            blurRadius: 5.0,
-                                            spreadRadius: 0.5,
-                                          ),
-                                          BoxShadow(
-                                            color: Colors.black12,
-                                            offset: Offset(-5.0, -5.0),
-                                            blurRadius: 5.0,
-                                            spreadRadius: 0.5,
-                                          )
-                                        ]),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: Image(
-                                        image: AssetImage(
-                                            'assets/images/star.jpg'),
-                                      ),
-                                    ),
-                                  ),
-                                  onTap: () {
-                                    _isshow = !_isshow;
-                                    setState(() {
-                                      x = random.nextInt(10);
-                                    });
-                                  },
-                                ),
+                                buildClickableImage(),
+                                buildClickableImage(),
+                                buildClickableImage(),
                               ],
                             ),
-                            SizedBox(
+                           const SizedBox(
                               height: 20,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                GestureDetector(
-                                  child: Container(
-                                    height: 80,
-                                    width: 80,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.black12,
-                                            offset: Offset(5.0, 5.0),
-                                            blurRadius: 5.0,
-                                            spreadRadius: 0.5,
-                                          ),
-                                          BoxShadow(
-                                            color: Colors.black12,
-                                            offset: Offset(-5.0, -5.0),
-                                            blurRadius: 5.0,
-                                            spreadRadius: 0.5,
-                                          )
-                                        ]),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: Image(
-                                        image: AssetImage(
-                                            'assets/images/star.jpg'),
-                                      ),
-                                    ),
-                                  ),
-                                  onTap: () {
-                                    _isshow = !_isshow;
-                                    setState(() {
-                                      x = random.nextInt(10);
-                                    });
-                                  },
-                                ),
-                                GestureDetector(
-                                  child: Container(
-                                    height: 80,
-                                    width: 80,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.black12,
-                                            offset: Offset(5.0, 5.0),
-                                            blurRadius: 5.0,
-                                            spreadRadius: 0.5,
-                                          ),
-                                          BoxShadow(
-                                            color: Colors.black12,
-                                            offset: Offset(-5.0, -5.0),
-                                            blurRadius: 5.0,
-                                            spreadRadius: 0.5,
-                                          )
-                                        ]),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: Image(
-                                        image: AssetImage(
-                                            'assets/images/star.jpg'),
-                                      ),
-                                    ),
-                                  ),
-                                  onTap: () {
-                                    _isshow = !_isshow;
-                                    setState(() {
-                                      x = random.nextInt(10);
-                                    });
-                                  },
-                                ),
-                                GestureDetector(
-                                  child: Container(
-                                    height: 80,
-                                    width: 80,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.black12,
-                                            offset: Offset(5.0, 5.0),
-                                            blurRadius: 5.0,
-                                            spreadRadius: 0.5,
-                                          ),
-                                          BoxShadow(
-                                            color: Colors.black12,
-                                            offset: Offset(-5.0, -5.0),
-                                            blurRadius: 5.0,
-                                            spreadRadius: 0.5,
-                                          )
-                                        ]),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: Image(
-                                        image: AssetImage(
-                                            'assets/images/star.jpg'),
-                                      ),
-                                    ),
-                                  ),
-                                  onTap: () {
-                                    _isshow = !_isshow;
-                                    setState(() {
-                                      x = random.nextInt(10);
-                                    });
-                                  },
-                                ),
+                                buildClickableImage(),
+                                buildClickableImage(),
+                                buildClickableImage(),
                               ],
                             ),
                           ],
@@ -441,38 +136,42 @@ class _LotteryAppState extends State<LotteryApp> {
     );
   }
 
-  boxes() {
-    GestureDetector(
+  Widget buildClickableImage() {
+    return GestureDetector(
       child: Container(
         height: 80,
         width: 80,
         decoration: BoxDecoration(
-            color: Colors.amber,
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black12,
-                offset: Offset(5.0, 5.0),
-                blurRadius: 5.0,
-                spreadRadius: 0.5,
-              ),
-              BoxShadow(
-                color: Colors.black12,
-                offset: Offset(-5.0, -5.0),
-                blurRadius: 5.0,
-                spreadRadius: 0.5,
-              )
-            ]),
-        child: Image(
-          image: AssetImage('assets/images/star.jpg'),
+          borderRadius: BorderRadius.circular(10),
+          boxShadow:const [
+            BoxShadow(
+              color: Colors.black12,
+              offset: Offset(5.0, 5.0),
+              blurRadius: 5.0,
+              spreadRadius: 0.5,
+            ),
+            BoxShadow(
+              color: Colors.black12,
+              offset: Offset(-5.0, -5.0),
+              blurRadius: 5.0,
+              spreadRadius: 0.5,
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child:const Image(
+            image: AssetImage('assets/images/star.jpg'),
+          ),
         ),
       ),
       onTap: () {
-        _isshow = !_isshow;
         setState(() {
+          _isshow = !_isshow;
           x = random.nextInt(10);
         });
       },
     );
   }
 }
+
