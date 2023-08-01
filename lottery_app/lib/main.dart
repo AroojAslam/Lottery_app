@@ -21,6 +21,7 @@ class _LotteryAppState extends State<LotteryApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+
         appBar: AppBar(
           title: Text('Lottery App',
               style: TextStyle(color: Colors.brown.shade50),
@@ -30,28 +31,45 @@ class _LotteryAppState extends State<LotteryApp> {
         body: SafeArea(
           child: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const Padding(
-                  padding:  EdgeInsets.all(20),
-                  child: Text(
-                    'Lottery Winning Number is 5',
-                    style: TextStyle(fontSize: 20),
+                 Padding(
+                  padding:  EdgeInsets.only(top: 80),
+                  child: Container(
+                    height: 50,
+                    width: 300,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.brown.shade100,
+                      border: Border.all(
+                        color:  Color.fromRGBO(162, 1, 22,1),
+                        width: 2,
+                      )
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Lottery Winning Number is 5',
+                        style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+                      ),
+                    ),
                   ),
                 ),
               const  SizedBox(
-                  height: 20,
+                  height: 40,
                 ),
                 Container(
-                  height: 400,
-                  width: 400,
+                  height: 330,
+                  width: 330,
                   decoration: BoxDecoration(
                     color: Colors.brown.shade100,
                     borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                        color:  Color.fromRGBO(162, 1, 22,1),
+                        width: 2,
+                      )
                   ),
-                  child: !_isshow
-                      ? x == 5
-                          ? Column(
+                  child: !_isshow ? x == 5 ?
+                  Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                               const  Icon(
@@ -70,8 +88,8 @@ class _LotteryAppState extends State<LotteryApp> {
                                   textAlign: TextAlign.center,
                                 )
                               ],
-                            )
-                          : Column(
+                            ) :
+                  Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Icon(
@@ -90,8 +108,8 @@ class _LotteryAppState extends State<LotteryApp> {
                                   textAlign: TextAlign.center,
                                 )
                               ],
-                            )
-                      : Column(
+                            ) :
+                  Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Row(
@@ -128,10 +146,25 @@ class _LotteryAppState extends State<LotteryApp> {
                           ],
                         ),
                 ),
+
+
               ],
             ),
           ),
+
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Color.fromRGBO(162, 1, 22,1),
+          child: Icon(Icons.refresh),
+          onPressed: (){
+            setState(() {
+
+            });
+            _isshow=true;
+          },
+        ),
+
       ),
     );
   }
